@@ -23,26 +23,27 @@ if(model!=null)
     <head>
        <%@ include file="/Presentacion/link.jsp" %>
         <title>Cuenta favorita</title>
+        <link href="/Banco_proyectoI/css/signin.css" rel="stylesheet" type="text/css">
     </head>
     <body>
          <%@ include file="/Presentacion/Encabezado.jsp" %> 
           
-         <form class="form_inicio" action="/Banco_proyectoI/Presentacion/Cliente/Cuenta_amiga/add" method="POST">
+         <form class="form-signin" action="/Banco_proyectoI/Presentacion/Cliente/Cuenta_amiga/add" method="POST">
           <h2>Cuenta Favorita</h2>
      <div class="form-row">
          <label for="errores1">Numero de cuenta favorita:</label>
-         <input class="<%=this.feedback("txtCuentaamiga", errores) %>" id="errores1" type="text" name="txtCuentaamiga" placeholder="<%=this.placeholder("txtCuentaamiga", errores, "# Cuenta favorita") %>">
+         <input class="<%=this.feedback("txtCuentaamiga", errores) %>" id="errores1" type="text" name="txtCuentaamiga" placeholder="<%=this.placeholder("txtCuentaamiga", errores, "# Cuenta favorita") %>" requiered>
          <div class="invalid-feedback">
                  <%=this.placeholder("txtCuentaamiga", errores, "# Cuenta favorita") %>
                </div>
      </div>
      <div class="form-row">
          <label for="errores2">Nombre propietario:</label>
-         <input type="text" name="txtNombre" placeholder="Nombre" id="errores2">
+         <input type="text" name="txtNombre" placeholder="Nombre" id="errores2" required>
      </div>
      <div class="form-row">
          <label for="errores3">Cedula propietario:</label>
-         <input type="text" name="txtCedula" placeholder="Cedula" id="errores3"> <br> <br>
+         <input type="text" name="txtCedula" placeholder="Cedula" id="errores3" required> <br> <br>
      </div>
       <center><input type="submit" name="butttonenviar" value="Añadir" ></center>
       </form>
