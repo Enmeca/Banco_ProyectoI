@@ -23,33 +23,48 @@ if(model!=null)
     <head>
        <%@ include file="/Presentacion/link.jsp" %>
         <title>Cuenta favorita</title>
-        <link href="/Banco_proyectoI/css/signin.css" rel="stylesheet" type="text/css">
+
+        <style>
+        .form {
+
+background: rgba(19, 35, 47, 0.9);
+padding: 40px;
+max-width: 600px;
+margin: 40px auto;
+border-radius: 4px;
+box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+align-items: center;
+
+}
+        </style>
     </head>
     <body>
          <%@ include file="/Presentacion/Encabezado.jsp" %> 
-          
-         <form class="form-signin" action="/Banco_proyectoI/Presentacion/Cliente/Cuenta_amiga/add" method="POST">
-          <h2>Cuenta Favorita</h2>
-     <div class="form-row">
-         <label for="errores1">Numero de cuenta favorita:</label>
-         <input class="<%=this.feedback("txtCuentaamiga", errores) %>" id="errores1" type="text" name="txtCuentaamiga" placeholder="<%=this.placeholder("txtCuentaamiga", errores, "# Cuenta favorita") %>" requiered>
-         <div class="invalid-feedback">
-                 <%=this.placeholder("txtCuentaamiga", errores, "# Cuenta favorita") %>
-               </div>
-     </div>
-     <div class="form-row">
-         <label for="errores2">Nombre propietario:</label>
-         <input type="text" name="txtNombre" placeholder="Nombre" id="errores2" required>
-     </div>
-     <div class="form-row">
-         <label for="errores3">Cedula propietario:</label>
-         <input type="text" name="txtCedula" placeholder="Cedula" id="errores3" required> <br> <br>
-     </div>
-      <center><input type="submit" name="butttonenviar" value="Añadir" ></center>
-      </form>
-         <%@ include file="/Presentacion/Footer.jsp" %>
-    </body>
-</html>
+          <div class="form">
+
+            <form class="form-signin" action="/Banco_proyectoI/Presentacion/Cliente/Cuenta_amiga/add" method="POST">
+              <h2>Cuenta Favorita</h2>
+              <div class="form-row">
+                <label for="errores1">Numero de cuenta favorita:</label>
+                <input class="<%=this.feedback("txtCuentaamiga", errores) %>" id="errores1" type="text" name="txtCuentaamiga" placeholder="<%=this.placeholder("txtCuentaamiga", errores, "# Cuenta favorita") %>" requiered>
+                <div class="invalid-feedback">
+                  <%=this.placeholder("txtCuentaamiga", errores, "# Cuenta favorita") %>
+                </div>
+              </div>
+              <div class="form-row">
+                <label for="errores2">Nombre propietario:</label>
+                <input type="text" name="txtNombre" placeholder="Nombre" id="errores2" required>
+              </div>
+              <div class="form-row">
+                <label for="errores3">Cedula propietario:</label>
+                <input type="text" name="txtCedula" placeholder="Cedula" id="errores3" required> <br> <br>
+              </div>
+              <center><input type="submit" name="butttonenviar" value="Añadir" ></center>
+            </form>
+          </div>
+            <%@ include file="/Presentacion/Footer.jsp" %>
+          </body>
+          </html>
 <%! private String placeholder(String campo, Map<String,String> errores,String mensaje){
       if ( (errores!=null) && (errores.get(campo)!=null) )
         return errores.get(campo);
