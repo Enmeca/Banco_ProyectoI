@@ -28,9 +28,20 @@ if(model!=null)
           
          <% if (usuario==null){ %>
          <form class="form_inicio" style="float: right" action="/Banco_proyectoI/Presentacion/login/login" method="POST">
-                <h2>Bienvenido</h2>
-                <p>Identificación:</p> <input class="<%=this.Invalida("txtID", errores)%>" type="text" name="txtID" placeholder="<%= this.placeholder("txtID", errores,"Cedula cliente") %>"    >
-                <p>Contraseña:</p> <input class="<%=this.Invalida("txtContrasena", errores)%>" type="password" name="txtContrasena"  placeholder="<%= this.placeholder("txtContrasena", errores,"Contraseña cliente") %>"><br><br>
+          <h2>Bienvenido</h2>
+          <div class="form-row">
+            <p>Identificación:</p> <input class="<%=this.feedback("txtID", errores)%>" type="text" name="txtID" placeholder="<%= this.placeholder("txtID", errores,"Cedula cliente") %>"    >
+            <div class="invalid-feedback">
+                <%= this.placeholder("txtID", errores,"Cedula cliente") %>
+              </div>
+        </div> 
+          </div>      
+          <div class"form-row">
+            <p>Contraseña:</p> <input class="<%=this.feedback("txtContrasena", errores)%>" type="password" name="txtContrasena"  placeholder="<%= this.placeholder("txtContrasena", errores,"Contraseña cliente") %>"><br><br>
+            <div class="invalid-feedback">
+                Contrasena invalida
+              </div>
+          </div>
                <center><input  type="submit" name="txtIngresar" value="Ingresar"></center><br>
                <center><a href="/Banco_proyectoI/Presentacion/Registro/Registro.jsp"><input  type="button" name="txtRegistro" value="Registrarse"></a></center>
         </form>
@@ -140,3 +151,13 @@ if(model!=null)
         return "";
     }
 %>
+
+<%!
+    private String feedback(String campo, Map<String,String> errores){
+        if ( (errores!=null) && (errores.get(campo)!=null) )
+            return("form-control is-invalid");
+        else
+            return("form-control");
+
+    }
+    %>
