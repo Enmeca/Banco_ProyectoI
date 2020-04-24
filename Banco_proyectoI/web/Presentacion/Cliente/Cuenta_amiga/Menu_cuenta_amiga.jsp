@@ -34,6 +34,7 @@ margin: 40px auto;
 border-radius: 4px;
 box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 align-items: center;
+color: whitesmoke;
 
 }
         </style>
@@ -42,20 +43,20 @@ align-items: center;
          <%@ include file="/Presentacion/Encabezado.jsp" %> 
           <div class="form">
 
-            <form class="form-signin" action="/Banco_proyectoI/Presentacion/Cliente/Cuenta_amiga/add" method="POST">
+            <form class="" action="/Banco_proyectoI/Presentacion/Cliente/Cuenta_amiga/add" method="POST">
               <h2>Cuenta Favorita</h2>
-              <div class="form-row">
+              <div class="form-group">
                 <label for="errores1">Numero de cuenta favorita:</label>
                 <input class="<%=this.feedback("txtCuentaamiga", errores) %>" id="errores1" type="text" name="txtCuentaamiga" placeholder="<%=this.placeholder("txtCuentaamiga", errores, "# Cuenta favorita") %>" requiered>
                 <div class="invalid-feedback">
                   <%=this.placeholder("txtCuentaamiga", errores, "# Cuenta favorita") %>
                 </div>
               </div>
-              <div class="form-row">
+              <div class="form-group">
                 <label for="errores2">Nombre propietario:</label>
                 <input type="text" name="txtNombre" placeholder="Nombre" id="errores2" required>
               </div>
-              <div class="form-row">
+              <div class="form-group">
                 <label for="errores3">Cedula propietario:</label>
                 <input type="text" name="txtCedula" placeholder="Cedula" id="errores3" required> <br> <br>
               </div>
