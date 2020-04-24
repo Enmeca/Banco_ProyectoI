@@ -37,7 +37,7 @@ if(model!=null)
         </div> 
           </div>      
           <div class"form-row">
-            <p>Contraseña:</p> <input class="<%=this.feedback("txtContrasena", errores)%>" type="password" name="txtContrasena"  placeholder="<%= this.placeholder("txtContrasena", errores,"Contraseña cliente") %>"><br><br>
+            <p>Contraseña:</p> <input class="<%=this.feedback("txtContrasena", errores)%>" type="password" name="txtContrasena"  placeholder="<%= this.placeholder("txtContrasena", errores,"Contraseña cliente") %>">
             <div class="invalid-feedback">
                 Contrasena invalida
               </div>
