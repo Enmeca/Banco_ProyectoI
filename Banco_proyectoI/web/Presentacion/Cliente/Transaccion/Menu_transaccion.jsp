@@ -27,7 +27,17 @@
     <head>
  <%@ include file="/Presentacion/link.jsp" %>
         <title>Transaccion-Cuenta favorita</title>
-        
+        <style>
+        .formtrans {
+background: rgba(6, 31, 143, 0.9);
+padding: 40px;
+max-width: 600px;
+margin: 40px auto;
+border-radius: 4px;
+box-shadow: 0 4px 10px 4px rgba(6, 31, 143, 0.3);
+color: whitesmoke;
+}
+        </style>
     </head>
     <body>
  
@@ -35,8 +45,8 @@
            
          <%@ include file="/Presentacion/Encabezado.jsp" %>
       
-           <form name="formtransaccion" action="/Banco_proyectoI/Presentacion/Cliente/Transaccion/cuentas" method="POST">
-               <div class="form_inicio">
+           <form name="formtrans" action="/Banco_proyectoI/Presentacion/Cliente/Transaccion/cuentas" method="POST">
+               <div class="form-trans">
              <h2>Transferencia</h2>
              <p >Mis cuentas:</p>
              <select name="selectCuenta" >
