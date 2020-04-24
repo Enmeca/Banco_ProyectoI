@@ -28,15 +28,24 @@ if(model!=null)
          <%@ include file="/Presentacion/Encabezado.jsp" %> 
           
          <form class="form_inicio" action="/Banco_proyectoI/Presentacion/Cliente/Cuenta_amiga/add" method="POST">
-             <h2>Cuenta Favorita</h2>
-        <p>Numero de cuenta favorita:</p>
-        <input class="<%=this.Invalida("txtCuentaamiga", errores) %>" type="text" name="txtCuentaamiga" placeholder="<%=this.placeholder("txtCuentaamiga", errores, "# Cuenta favorita") %>">
-         <p>Nombre propietario:</p>
-        <input type="text" name="txtNombre" placeholder="Nombre">
-           <p>Cedula propietario:</p>
-        <input type="text" name="txtCedula" placeholder="Cedula"> <br> <br>
-         <center><input type="submit" name="butttonenviar" value="Añadir" ></center>
-         </form>
+          <h2>Cuenta Favorita</h2>
+     <div class="form-row">
+         <label for="errores1">Numero de cuenta favorita:</label>
+         <input class="<%=this.feedback("txtCuentaamiga", errores) %>" id="errores1" type="text" name="txtCuentaamiga" placeholder="<%=this.placeholder("txtCuentaamiga", errores, "# Cuenta favorita") %>">
+         <div class="invalid-feedback">
+                 <%=this.placeholder("txtCuentaamiga", errores, "# Cuenta favorita") %>
+               </div>
+     </div>
+     <div class="form-row">
+         <label for="errores2">Nombre propietario:</label>
+         <input type="text" name="txtNombre" placeholder="Nombre" id="errores2">
+     </div>
+     <div class="form-row">
+         <label for="errores3">Cedula propietario:</label>
+         <input type="text" name="txtCedula" placeholder="Cedula" id="errores3"> <br> <br>
+     </div>
+      <center><input type="submit" name="butttonenviar" value="Añadir" ></center>
+      </form>
          <%@ include file="/Presentacion/Footer.jsp" %>
     </body>
 </html>
@@ -55,3 +64,12 @@ if(model!=null)
         return "";
     }
 %>
+<%!
+    private String feedback(String campo, Map<String,String> errores){
+        if ( (errores!=null) && (errores.get(campo)!=null) )
+            return("form-control is-invalid");
+        else
+            return("form-control");
+
+    }
+    %>
