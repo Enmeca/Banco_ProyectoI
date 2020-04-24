@@ -35,19 +35,20 @@ if(model!=null)
         }
       }
     </style>
+    <link href="/Banco_proyectoI/css/signin.css" rel="stylesheet" type="text/css">
     </head>
     <body class="text-center">
       <div class="login">
           
       
                 <form class="form-signin" action="/Banco_proyectoI/Presentacion/login/registro" method="POST">
-                    <h2>Registro</h2>
+                    <h1 class="registro">Registro</h1>
                     <div class="form-row">
 
                     <label for="validationServer01">Cedula:</label>
-                    <input type="text" class="<%= this.feedback("txtCedula",errores)%>" id="validationServer01" name="txtCedula" value="Cedula" placeholder="<%= this.placeholder("txtCedula",errores,"Cedula usuario")%>" required>
+                    <input type="text" class="<%= this.feedback("txtCedula",errores)%>" id="validationServer01" name="txtCedula" placeholder="<%= this.placeholder("txtCedula",errores,"Cedula usuario")%>" required>
                     <div class="invalid-feedback">
-                            Contrasena invalida
+                            <%= this.placeholder("txtCedula",errores,"Cedula usuario")%>
                           </div>
                     </div> 
                           <div class="form-row">
@@ -72,9 +73,8 @@ if(model!=null)
       else
         return mensaje;
     }
-%>
-<%!
-    private String feedback(String campo, Map<String,String>){
+
+    private String feedback(String campo, Map<String,String> errores){
         if ( (errores!=null) && (errores.get(campo)!=null) )
             return("form-control is-invalid");
         else

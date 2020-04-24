@@ -18,17 +18,51 @@ if(model!=null)
     <head>
            <%@ include file="/Presentacion/link.jsp" %>
         <title>Registro</title>
+        <meta name="theme-color" content="#563d7c">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <link href="/Banco_proyectoI/css/signin.css" rel="stylesheet" type="text/css">
     </head>
-    <body>
-        <%@ include file="/Presentacion/Encabezado.jsp" %>  
-        <form class="form_inicio" action="/Banco_proyectoI/Presentacion/login/registro" method="POST">
-               <h2>Registro</h2>
-               <p>Cedula:</p> <input class="<%=this.Invalida("txtCedula", errores) %>" type="text" name="txtCedula" placeholder="<%= this.placeholder("txtCedula",errores,"Cedula usuario")%>">
-               <p>Contraseña:</p> <input class="<%=this.Invalida("txtContrasena", errores) %>" type="password" name="txtContrasena" placeholder="<%= this.placeholder("txtContrasena",errores,"Contraseña usuario")%>"> <br> <br>
-           
-               <center> <input type="submit" name="butttonenviar" value="Registrarse" > </center>
-              
-          </form>
+    <body class="text-center">
+      <div class="login">
+          
+      
+                <form class="form-signin" action="/Banco_proyectoI/Presentacion/login/registro" method="POST">
+                    <h1 class="registro">Registro</h1>
+                    <div class="form-row">
+
+                    <label for="validationServer01">Cedula:</label>
+                    <input type="text" class="<%= this.feedback("txtCedula",errores)%>" id="validationServer01" name="txtCedula" placeholder="<%= this.placeholder("txtCedula",errores,"Cedula usuario")%>" required>
+                    <div class="invalid-feedback">
+                            <%= this.placeholder("txtCedula",errores,"Cedula usuario")%>
+                          </div>
+                    </div> 
+                          <div class="form-row">
+
+                              <label for="validationServer02">Contrasenia:</label>
+                              <input type="password" class="<%= this.feedback("txtContrasena",errores)%>" id="validationServer02"  name="txtContrasena" placeholder="<%= this.placeholder("txtContrasena",errores,"Contraseña usuario")%>" required>                           
+                              <div class="invalid-feedback">
+                                  Contrasena invalida
+                                </div>
+                            </div>
+                <input class="btn btn-primary" type="submit" name="butttonenviar" value="Registrarse" >
+               
+                </form>
+      </div>
                <%@ include file="/Presentacion/Footer.jsp" %>
     </body>
 </html>
@@ -39,12 +73,12 @@ if(model!=null)
       else
         return mensaje;
     }
-%>
-<%!
-   private String Invalida(String campo, Map<String,String> errores){
-      if ( (errores!=null) && (errores.get(campo)!=null) )
-        return "Invalida";
-      else
-        return "";
+
+    private String feedback(String campo, Map<String,String> errores){
+        if ( (errores!=null) && (errores.get(campo)!=null) )
+            return("form-control is-invalid");
+        else
+            return("form-control");
+
     }
-%>
+    %>
