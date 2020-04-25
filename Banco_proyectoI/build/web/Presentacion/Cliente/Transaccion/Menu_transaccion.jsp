@@ -27,17 +27,6 @@
     <head>
  <%@ include file="/Presentacion/link.jsp" %>
         <title>Transaccion-Cuenta favorita</title>
-        <style>
-        .formtrans {
-background: rgba(6, 31, 143, 0.9);
-padding: 40px;
-max-width: 600px;
-margin: 40px auto;
-border-radius: 4px;
-box-shadow: 0 4px 10px 4px rgba(6, 31, 143, 0.3);
-color: whitesmoke;
-}
-        </style>
     </head>
     <body>
  
@@ -48,12 +37,15 @@ color: whitesmoke;
            <form name="formtrans" action="/Banco_proyectoI/Presentacion/Cliente/Transaccion/cuentas" method="POST">
                <div class="form-trans">
              <h2>Transferencia</h2>
-             <p >Mis cuentas:</p>
-             <select name="selectCuenta" >
+             <div class="form-group">
+                <laber for="sleccuentaT">Mis cuentas:</label>
+             <select name="selectCuenta" id="sleccuentaT" >
                     <% for( Cuenta c:cuentas){%>
                     <option   value="<%=c.getNumero() %>"> <%=c.getNumero() %> </option>
                     <%}%>
         </select><br>
+                 </div>
+
          </div>
         <h2>Numero de cuenta favorita:</h2>
       <table>
