@@ -169,3 +169,27 @@ border-radius: 4px;
 box-shadow: 0 4px 10px 4px rgba(6, 31, 143, 0.3);
 color: whitesmoke;
 }
+
+.login {
+
+  background: rgba(19, 35, 47, 0.9);
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+  color: whitesmoke;
+  
+}
+.login label{
+    font-size: 1em;
+}
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+ul li ul{
+  background: #405e0d;
+}

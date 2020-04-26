@@ -8,7 +8,7 @@
 <%@page import="java.util.Map"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-  Model model = (Model) request.getAttribute("model");
+ Model model = (Model) request.getAttribute("model");
     Map<String,String> errores=null;
 if(model!=null)
  errores = (Map<String,String>) request.getAttribute("errores"); 
@@ -21,15 +21,38 @@ if(model!=null)
     </head>
     <body>
           <%@ include file="Encabezado.jsp" %>
-          <form class="form_inicio"    action="/Banco_proyectoI/Presentacion/Cajero/show" method="POST">
+          <div class="login">
+          <form class="form-signin"    action="/Banco_proyectoI/Presentacion/Cajero/show" method="POST">
                <h2>Registro</h2>
-               <p>Cedula:</p> <input class="<%=this.Invalida("txtCedula", errores) %>" type="text" name="txtCedula" placeholder="<%=this.placeholder("txtCedula", errores, "Cedula") %>">
-               <p>Nombre:</p> <input type="text" name="txtNombre" placeholder="Nombre">
-               <p>Telefono:</p> <input class="<%=this.Invalida("txtTelefono", errores)%>" type="text" name="txtTelefono" placeholder="<%=this.placeholder("txtTelefono", errores, "numero telefonico") %>">
-               <p>Correo de envio de la contraseña:</p> <input type="text" name="txtCorreo" placeholder="Correo"><br> <br>
-                  <center><input type="submit" name="butttonenviar" value="Añadir" ></center>
+                <div class="form-row">
+                    <label for="Cedula01">Cedula:</label>
+                    <input type="text" class="<%= this.feedback("txtCedula",errores)%>" id="Cedula01" name="txtCedula" placeholder="<%= this.placeholder("txtCedula",errores,"Cedula usuario")%>" required>
+                    <div class="invalid-feedback">
+                            <%= this.placeholder("txtCedula",errores,"Cedula usuario")%>
+                    </div>
+                </div>
+
+        <div class="form-row">
+            <label for="Nom01">Nombre:</label><br>
+          <input type="text" name="txtNombre" placeholder="Nombre" id="Nom01">
+        </div>
+
+               <div class="form-row">
+            <label for="Tel01">Telefono:</label>
+                    <input type="text" class="<%= this.feedback("txtCedula",errores)%>" id="Tel01" name="txtTelefono" placeholder="<%= this.placeholder("txtTelefono",errores,"numero telefonico")%>" required>
+                    <div class="invalid-feedback">
+                            <%= this.placeholder("txtCedula",errores,"numero telefonico")%>
+                    </div>
+      </div>
+
+      <div class="form-row">
+      <label for="email01">Correo de envio de la contraseña:</label>
+      <input type="text" id="email01" name="txtCorreo" placeholder="Correo">
+      </div>
+      <center><input type="submit" class="btn btn-primary" name="butttonenviar" value="Añadir" ></center>
                   
           </form>
+          </div>
      <%@ include file="/Presentacion/Footer.jsp" %>
     </body>
 </html>
@@ -42,10 +65,10 @@ if(model!=null)
     }
 %>
 <%!
-   private String Invalida(String campo, Map<String,String> errores){
-      if ( (errores!=null) && (errores.get(campo)!=null) )
-        return "Invalida";
-      else
-        return "";
-    }
+    private String feedback(String campo, Map<String,String> erroresf){
+        if ( (erroresf!=null) && (erroresf.get(campo)!=null) )
+            return("form-control is-invalid");
+        else
+            return("form-control");
+}
 %>

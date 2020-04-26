@@ -25,17 +25,6 @@ if(model!=null)
     <head>
         <%@ include file="/Presentacion/link.jsp" %>
         <title>Transaccion</title>
-        <style>
-        .form-trans {
-          background: rgba(174, 231, 16, 0.9);
-          padding: 40px;
-          max-width: 600px;
-          margin: 40px auto;
-          border-radius: 4px;
-          box-shadow: 0 4px 10px 4px rgba(174, 231, 16, 0.3);
-          color: whitesmoke;
-          };
-        </style>
     </head>
     <body>
    <%@ include file="/Presentacion/Encabezado.jsp" %>

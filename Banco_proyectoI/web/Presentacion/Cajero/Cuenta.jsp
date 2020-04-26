@@ -60,7 +60,7 @@ if(model!=null)
  
 
       <%if(persona != null){%>
-      <form class="form_inicio" action="/Banco_proyectoI/Presentacion/Cajero/addCuenta" method="POST">
+      <form class="login" action="/Banco_proyectoI/Presentacion/Cajero/addCuenta" method="POST">
                <h2>Creación de cuenta</h2>
           
                <p>Numero cuenta:</p> <input type="text" name="txtNumeroCuenta"  value="<%=Numero%>" readonly>

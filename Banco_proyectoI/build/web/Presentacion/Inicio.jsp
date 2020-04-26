@@ -30,14 +30,14 @@ if(model!=null)
          <form class="form_inicio" style="float: right" action="/Banco_proyectoI/Presentacion/login/login" method="POST">
           <h2>Bienvenido</h2>
           <div class="form-row">
-            <p>Identificación:</p> <input class="<%=this.feedback("txtID", errores)%>" type="text" name="txtID" placeholder="<%= this.placeholder("txtID", errores,"Cedula cliente") %>"    >
+            <p>Identificación:</p> <input class="<%=this.feedback("txtID", errores)%>" type="text" name="txtID" placeholder="<%= this.placeholder("txtID", errores,"Cedula cliente") %>" required >
             <div class="invalid-feedback">
                 <%= this.placeholder("txtID", errores,"Cedula cliente") %>
               </div>
         </div> 
           </div>      
-          <div class"form-row">
-            <p>Contraseña:</p> <input class="<%=this.feedback("txtContrasena", errores)%>" type="password" name="txtContrasena"  placeholder="<%= this.placeholder("txtContrasena", errores,"Contraseña cliente") %>">
+          <div class="form-row">
+            <p>Contraseña:</p> <input class="<%=this.feedback("txtContrasena", errores)%>" type="password" name="txtContrasena"  placeholder="<%= this.placeholder("txtContrasena", errores,"Contraseña cliente") %>" required>
             <div class="invalid-feedback">
                 Contrasena invalida
               </div>
