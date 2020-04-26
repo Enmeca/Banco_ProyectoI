@@ -42,7 +42,7 @@ if(model!=null)
           
       
                 <form class="form-signin" action="/Banco_proyectoI/Presentacion/login/registro" method="POST">
-                    <h1 class="registro">Registro</h1>
+                    <h1 class="titulos">Registro</h1>
                     <div class="form-row">
 
                     <label for="validationServer01">Cedula:</label>

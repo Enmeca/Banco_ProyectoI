@@ -28,7 +28,7 @@ if(model!=null)
           
          <% if (usuario==null){ %>
          <form class="form_inicio" style="float: right" action="/Banco_proyectoI/Presentacion/login/login" method="POST">
-          <h2>Bienvenido</h2>
+          <h2 class="titulos">Bienvenido</h2>
           <div class="form-row">
             <p>Identificación:</p> <input class="<%=this.feedback("txtID", errores)%>" type="text" name="txtID" placeholder="<%= this.placeholder("txtID", errores,"Cedula cliente") %>" required >
             <div class="invalid-feedback">
